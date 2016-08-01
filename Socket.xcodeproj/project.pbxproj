@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E72ECF2E1D4B727C008C8D5A /* ButtonOrder.plist in Resources */ = {isa = PBXBuildFile; fileRef = E72ECF2D1D4B727C008C8D5A /* ButtonOrder.plist */; };
+		E72ECF371D4B80CE008C8D5A /* JoyStickView.m in Sources */ = {isa = PBXBuildFile; fileRef = E72ECF361D4B80CE008C8D5A /* JoyStickView.m */; };
+		E72ECF3A1D4B81F9008C8D5A /* RobotJoystick-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E72ECF391D4B81F9008C8D5A /* RobotJoystick-Info.plist */; };
 		E73ED7FE1D48D939009A13F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E73ED7FD1D48D939009A13F8 /* main.m */; };
 		E73ED8011D48D939009A13F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E73ED8001D48D939009A13F8 /* AppDelegate.m */; };
 		E73ED8041D48D939009A13F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73ED8031D48D939009A13F8 /* ViewController.m */; };
@@ -59,6 +62,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E72ECF2D1D4B727C008C8D5A /* ButtonOrder.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ButtonOrder.plist; sourceTree = "<group>"; };
+		E72ECF2F1D4B730C008C8D5A /* RobotJoystick-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RobotJoystick-Bridging-Header.h"; sourceTree = "<group>"; };
+		E72ECF351D4B80CE008C8D5A /* JoyStickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoyStickView.h; sourceTree = "<group>"; };
+		E72ECF361D4B80CE008C8D5A /* JoyStickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoyStickView.m; sourceTree = "<group>"; };
+		E72ECF381D4B81F0008C8D5A /* RobotJoystick-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RobotJoystick-Prefix.pch"; sourceTree = "<group>"; };
+		E72ECF391D4B81F9008C8D5A /* RobotJoystick-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RobotJoystick-Info.plist"; sourceTree = "<group>"; };
 		E73ED7F91D48D939009A13F8 /* Socket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73ED7FD1D48D939009A13F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E73ED7FF1D48D939009A13F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -135,6 +144,7 @@
 				E73ED8151D48D939009A13F8 /* SocketTests */,
 				E73ED8201D48D939009A13F8 /* SocketUITests */,
 				E73ED7FA1D48D939009A13F8 /* Products */,
+				E72ECF2F1D4B730C008C8D5A /* RobotJoystick-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +161,8 @@
 		E73ED7FB1D48D939009A13F8 /* Socket */ = {
 			isa = PBXGroup;
 			children = (
+				E72ECF351D4B80CE008C8D5A /* JoyStickView.h */,
+				E72ECF361D4B80CE008C8D5A /* JoyStickView.m */,
 				E73ED7FF1D48D939009A13F8 /* AppDelegate.h */,
 				E73ED8001D48D939009A13F8 /* AppDelegate.m */,
 				E73ED8021D48D939009A13F8 /* ViewController.h */,
@@ -158,6 +170,7 @@
 				E73ED8301D48D95B009A13F8 /* sock.swift */,
 				E73ED8031D48D939009A13F8 /* ViewController.m */,
 				E73ED8051D48D939009A13F8 /* Main.storyboard */,
+				E72ECF2D1D4B727C008C8D5A /* ButtonOrder.plist */,
 				E73ED8081D48D939009A13F8 /* Assets.xcassets */,
 				E73ED80A1D48D939009A13F8 /* LaunchScreen.storyboard */,
 				E73ED80D1D48D939009A13F8 /* Info.plist */,
@@ -169,6 +182,8 @@
 		E73ED7FC1D48D939009A13F8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E72ECF381D4B81F0008C8D5A /* RobotJoystick-Prefix.pch */,
+				E72ECF391D4B81F9008C8D5A /* RobotJoystick-Info.plist */,
 				E73ED7FD1D48D939009A13F8 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -328,6 +343,8 @@
 				E73ED80C1D48D939009A13F8 /* LaunchScreen.storyboard in Resources */,
 				E73ED8091D48D939009A13F8 /* Assets.xcassets in Resources */,
 				E73ED8071D48D939009A13F8 /* Main.storyboard in Resources */,
+				E72ECF2E1D4B727C008C8D5A /* ButtonOrder.plist in Resources */,
+				E72ECF3A1D4B81F9008C8D5A /* RobotJoystick-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E72ECF371D4B80CE008C8D5A /* JoyStickView.m in Sources */,
 				E73ED8841D48E801009A13F8 /* SocketEnginePacketType.swift in Sources */,
 				E73ED88D1D48E801009A13F8 /* SocketIOClientStatus.swift in Sources */,
 				E73ED87F1D48E801009A13F8 /* SocketAckManager.swift in Sources */,
@@ -613,6 +631,7 @@
 				E73ED8281D48D939009A13F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E73ED8291D48D939009A13F8 /* Build configuration list for PBXNativeTarget "SocketTests" */ = {
 			isa = XCConfigurationList;
@@ -621,6 +640,7 @@
 				E73ED82B1D48D939009A13F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E73ED82C1D48D939009A13F8 /* Build configuration list for PBXNativeTarget "SocketUITests" */ = {
 			isa = XCConfigurationList;
@@ -629,6 +649,7 @@
 				E73ED82E1D48D939009A13F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
