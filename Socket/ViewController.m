@@ -24,6 +24,7 @@ int downLeft =6;
 int left =7;
 int upLeft =8;
 
+SocketIOClient*  s=nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,20 +41,23 @@ int upLeft =8;
     
     
     //[socket sendEvent:@"chat" withData:@"hello"];
-    SocketIOClient* socket = [[SocketIOClient alloc] initWithSocketURL:url options:@{@"log": @YES, @"forcePolling": @YES}];
+    s = [[SocketIOClient alloc] initWithSocketURL:url options:@{@"log": @YES, @"forcePolling": @YES}];
 
-    [socket on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
+    [s on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
         NSLog(@"socket connected");
     }];
     
-    [socket on:@"currentAmount" callback:^(NSArray* data, SocketAckEmitter* ack) {
+//    [socket emit:@"chat" withItems:@[@"heyy"]];
+
+    
+    [s on:@"message" callback:^(NSArray* data, SocketAckEmitter* ack) {
         
-        [socket emit:@"chat" withItems:@[@"heyy"]];
+        [s emit:@"chat" withItems:@[@"heyy"]];
    
 
     }];
     
-    [socket connect];
+    [s connect];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,11 +102,8 @@ int upLeft =8;
     _x.text =[NSString stringWithFormat:@"%f",dir.x];
     _y.text =[NSString stringWithFormat:@"%f",dir.y];
     
-      NSURL* url = [[NSURL alloc] initWithString:@"http://10.54.234.55:3000/"];
-    
-    SocketIOClient* socket = [[SocketIOClient alloc] initWithSocketURL:url options:@{@"log": @YES, @"forcePolling": @YES}];
-    
-    [socket on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
+     
+    [s on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
         NSLog(@"socket connected");
     }];
 
@@ -113,65 +114,57 @@ int upLeft =8;
     
     else if ((dir.x>0.866025) && (fabs(dir.y)<0.5))
     {_direction.text=@"Right";
-        [socket on:@"currentAmount" callback:^(NSArray* data, SocketAckEmitter* ack) {
-                [socket emit:@"chat" withItems:@[@"3"]];
+        
+        [s emit:@"chat" withItems:@[@"3"]];
          
-         }];
+
     }
     else if ((dir.x<0.866025) && (dir.x>0.5) && (dir.y<0.866025) && (dir.y>0.5))
     {_direction.text=@"Down Right";
-        [socket on:@"currentAmount" callback:^(NSArray* data, SocketAckEmitter* ack) {
-            [socket emit:@"chat" withItems:@[@"4"]];
-            
-        }];
+        
+            [s emit:@"chat" withItems:@[@"4"]];
+        
     }
     
     else if ((dir.x<0.866025) && (dir.x>0.5) && (dir.y>-0.866025) && (dir.y<-0.5))
     {_direction.text=@"Up Right";
-        [socket on:@"currentAmount" callback:^(NSArray* data, SocketAckEmitter* ack) {
-            [socket emit:@"chat" withItems:@[@"2"]];
-            
-        }];
+            [s emit:@"chat" withItems:@[@"2"]];
+        
     }
     
     else if ((dir.x<-0.866025) && (fabs(dir.y)<0.5))
     {_direction.text=@"Left";
-        [socket on:@"currentAmount" callback:^(NSArray* data, SocketAckEmitter* ack) {
-            [socket emit:@"chat" withItems:@[@"7"]];
-            
-        }];
+       
+            [s emit:@"chat" withItems:@[@"7"]];
+
     }
     
     else if ((dir.x>-0.866025) && (dir.x<-0.5) && (dir.y<0.866025) && (dir.y>0.5))
     {_direction.text=@"Down Left";
-        [socket on:@"currentAmount" callback:^(NSArray* data, SocketAckEmitter* ack) {
-            [socket emit:@"chat" withItems:@[@"6"]];
-            
-        }];
+       
+            [s emit:@"chat" withItems:@[@"6"]];
+        
     }
     
     else if ((dir.x>-0.866025) && (dir.x<-0.5) && (dir.y>-0.866025) && (dir.y<-0.5))
     {_direction.text=@"Up Left";
-        [socket on:@"currentAmount" callback:^(NSArray* data, SocketAckEmitter* ack) {
-            [socket emit:@"chat" withItems:@[@"8"]];
+                   [s emit:@"chat" withItems:@[@"8"]];
             
-        }];
+      
     }
     
     else if ((fabs(dir.x)<0.5) && (dir.y>0.5))
     {_direction.text=@"Down";
-        [socket on:@"currentAmount" callback:^(NSArray* data, SocketAckEmitter* ack) {
-            [socket emit:@"chat" withItems:@[@"5"]];
+        
+            [s emit:@"chat" withItems:@[@"5"]];
             
-        }];
+     
     }
     
     else
     {_direction.text=@"Up";
-        [socket on:@"currentAmount" callback:^(NSArray* data, SocketAckEmitter* ack) {
-            [socket emit:@"chat" withItems:@[@"1"]];
+     [s emit:@"chat" withItems:@[@"1"]];
             
-        }];
     }
     
 }
